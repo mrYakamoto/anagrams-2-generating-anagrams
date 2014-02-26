@@ -2,9 +2,9 @@
  
 ##Learning Competencies 
 
-* Modeling a simple real-world procedure in Ruby
+* Model a simple real-world system in Ruby code
 * Method definition, arguments, and return values
-* Looping
+* Express the looping control structure in Ruby
 * Basic performance analysis
 
 ##Summary 
