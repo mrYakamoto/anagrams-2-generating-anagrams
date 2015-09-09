@@ -1,4 +1,4 @@
-require_relative 'anagram'
+require_relative '../anagram'
 
 describe 'anagrams_for' do
   let(:dictionary) {['acres', 'cares', 'Cesar', 'races', 'smelt', 'melts', 'etlsm', 'shazam']}
