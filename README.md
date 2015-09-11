@@ -8,7 +8,7 @@ list = ['melon', 'lemon', 'apple']
 # => ['melon', 'lemon', 'apple']
 find_anagrams('melon', list)
 # => ['melon', 'lemon']
-``` 
+```
 *Figure 1*. Finding anagrams of melon in a list of words.
 
 In this challenge we're going to write a `find_anagrams` method that takes two arguments: a target word and a list of words.  The method returns all the anagrams for the target word that can be found in the list. (see Figure 1)
@@ -42,7 +42,7 @@ Let's also take a look at the performance of our method.  Is there any rework go
 
 
 ## Conclusion
-This challenge presented us with an opportunity to reuse code and to combine the functionality of different methods to make a new program.  Piece together different libraries and bits of code is a common programming behavior.
+This challenge presented us with an opportunity to reuse code and to combine the functionality of different methods to make a new program.  Piecing together different libraries and bits of code is a common programming behavior.
 
 We've also been working on writing tests.  Are we comfortable writing RSpec tests?  Do we understand how tests provide insight into whether or not our code behaves as we expect?  Are we able to follow a test-driven approach to development?
 
