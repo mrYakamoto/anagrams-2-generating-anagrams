@@ -1,53 +1,51 @@
-# Anagrams 2 Generating Anagrams
+# Anagrams 2: Finding Anagrams
 
-##Learning Competencies
+## Summary
+This challenge builds upon a [previous challenge][anagrams-1-detecting-anagrams-challenge] dealing with identifying [anagrams][wikipedia anagrams]—it's assumed that we've completed this previous challenge.
 
-* Model a simple real-world system in Ruby code
-* Method definition, arguments, and return values
-* Express the looping control structure in Ruby
-* Basic performance analysis
-* Write tests to handle edge cases in your code
+```ruby
+list = ['melon', 'lemon', 'apple']
+# => ['melon', 'lemon', 'apple']
+find_anagrams('melon', list)
+# => ['melon', 'lemon']
+```
+*Figure 1*. Finding anagrams of melon in a list of words.
 
-##Summary
+In this challenge we're going to write a `find_anagrams` method that takes two arguments: a target word and a list of words.  The method returns all the anagrams for the target word that can be found in the list. (see Figure 1)
 
-An **anagram** is a word formed by rearranging the letters of another word, e.g., *iceman* is an anagram of *cinema*.
+*Note:*  We are free to reference our solution to the earlier anagrams challenge.
 
-We're going to write a method called `anagrams_for` that takes as its input a word and an array of words, representing a dictionary, and returns an array consisting of all the anagrams of the input word.
 
-You should look back and possibly re-use some of the code and tests you wrote in your `is_anagram?` method.  You may or may not re-use the method itself, but at the very least you'll want the code handy for reference.
+## Releases
+### Release 0: Pseudocode
+Given a word and a dictionary, how could we create a list of the word's anagrams by hand?  Our `find_anagrams` method will model how we would perform this task in the real-world.  Do we understand the process we would use well enough to teach it to someone else?  The better we understand our process, the easier it will be to translate it into instructions for the computer.
 
-##Releases
-###Release 0 : Pseudocode Implementation of `anagrams_for`
+Before we begin to code our solution, let's pseudocode our own mental procedure in a way that's both easy for a human to understand and also to translate into a programming language.
 
-Before you start writing a single line of Ruby code, sit down and ask yourself, "Given a word and a dictionary, could I create a list of anagrams of that word by hand, tediousness aside?"
 
-Your `anagrams_for` method will be a model of you performing this task, so the more clearly you understand how to do this task yourself the easier it will be for you to write the code.  Do you understand it well enough to teach someone else how to create an anagram list?  How do you know the other person understands how to create an anagram list?
+### Release 1: Developing our Method
+The general behavior of our `find_anagrams` method is described in the *Summary*, and one test example has been written for us that describes this basic behavior.
 
-Write pseudocode that outlines your own mental procedure in a way that's easy for a human to both understand and translate into their favorite programming language. Also write pseudocode for the tests you think you're going to need.
+In addition to the basic behavior, we'll want to make sure that we write tests that describe the behavior of our method in specific cases.  Each item from the following list of requirements should be covered by tests.
 
-###Release 1 : Ruby Implementation of `anagrams_for`
+- Anagrams are case-insensitive.
+- A word is an anagram of itself.
+- If the list contains no anagrams of the target word, the return value is empty.
+- Neither the target word nor the words in the list need to be real English words.
+- If the target word is in the list of words, it should be included in the return value.
 
-Write a method called `anagrams_for` that takes as its input a word and an array of words, representing a dictionary, and returns an array consisting of all the anagrams of the input word.  Like `is_anagram?`, the method should be *case insensitive*.  Remember, a word is always an anagram of itself.
 
-`anagrams_for` should return an empty arrray (`[]`) if no anagrams are found in the dictionary.  You don't have to worry about the order of the returned `Array`.
+### Release 2: Refactor
+Once our method is working and all our tests are passing, let's refactor our code.  We'll want to ensure that our code follows Ruby style conventions and is as readable as possible.
 
-#### Guidelines
+Let's also take a look at the performance of our method.  Is there any rework going on?  Do we perform the same calculations on the same data multiple times?  If so, can we eliminate this without our code becoming a mess?
 
- * The dictionary is just an arbitrary collection of strings. It need not contain English words, e.g., 'etlsm' is a valid word.
- * If the input word itself happens to be in the dictionary, it should be in the the returned array, too.
- * If the input word is not in the dictionary, anagrams should still be returned
- * If there are no anagrams, an empty array should be returned
- * Detecting anagrams should be case insensitive. e.g. "Cesar" is an anagram of "cares"
 
-As usual, you'll want to write tests to ensure that your code follows the guidelines above.
+## Conclusion
+This challenge presented us with an opportunity to reuse code and to combine the functionality of different methods to make a new program.  Piecing together different libraries and bits of code is a common programming behavior.
 
-##Optimize Your Learning
+We've also been working on writing tests.  Are we comfortable writing RSpec tests?  Do we understand how tests provide insight into whether or not our code behaves as we expect?  Are we able to follow a test-driven approach to development?
 
-Consider the following:
-  * Is my program doing any duplicate work?  Is there a way to remove that duplicate work?
-  * Am I iterating over the dictionary multiple times or just once?
-  * If I'm re-using `is_anagram?`, what happens if I call `is_anagram?(word1, word2)` and then later call `is_anagram?(word1, word100)`?  Is there any duplicate work?
 
-##Resources
-
-* [Anagram on Wikipedia](http://en.wikipedia.org/wiki/Anagram)
+[wikipedia anagrams]: http://en.wikipedia.org/wiki/Anagram
+[anagrams-1-detecting-anagrams-challenge]: ../../../anagrams-1-detecting-anagrams-challenge
